@@ -3,10 +3,12 @@ import { Label as LabelPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+type LabelProps = React.ComponentProps<typeof LabelPrimitive.Root>
+
 function Label({
   className,
   ...props
-}) {
+}: LabelProps) {
   return (
     <LabelPrimitive.Root
       data-slot="label"
@@ -19,3 +21,4 @@ function Label({
 }
 
 export { Label }
+export type { LabelProps }

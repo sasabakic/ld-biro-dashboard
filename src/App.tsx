@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { CircleUserRound } from "lucide-react"
 import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/sidebar"
-import { AppSidebar } from "@/components/AppSidebar"
+import { AppSidebar } from "@/components/layout/AppSidebar"
 import Home from "@/pages/Home"
-import Clients from "@/pages/Clients"
+import ClientsPage from "@/pages/ClientsPage"
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <main className="flex-1 p-6">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/klijenti" element={<Clients />} />
+              <Route path="/klijenti" element={<ClientsPage />} />
             </Routes>
           </main>
         </SidebarInset>
