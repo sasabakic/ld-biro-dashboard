@@ -11,6 +11,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    // Poll for file changes when running inside Docker on macOS (bind-mount file
+    // events don't reach the container). Gated on the CHOKIDAR_USEPOLLING env set
+    // in docker-compose.yml, so host dev is unaffected.
+    watch: {
+      usePolling: process.env.CHOKIDAR_USEPOLLING === 'true',
+    },
+  },
   test: {
     environment: 'jsdom',
     globals: true,
